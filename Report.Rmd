@@ -7,7 +7,7 @@ The Data Analyst Team at FDMart Grocery was asked to help to analyze FDMarts tra
 
 <i>Fresh Fruits</i> can be found in about 20% of all transactions, while <i>Fresh Vegetables</i> can be found in more than 30% of the transactions. Other popular product categories are: <i>Cheese, Dried Fruit, Juice, Paper Wipes, Sliced Bread, Soup, and Wine.</i> *<i>[Chart 1]</i>*
 
-#<b>Wine and Beer</b>#
+<b>#Wine and Beer#</b>
 
 The Marketing Analyst expressed the desire to study patterns about alcoholic beverages  - Wine and Beer. From the frequency chart, we can conclude that Beer is slightly less frequent than Wine – about 5% of the transactions contain Beer. Using Apriori algorithm, we found frequent itemsets and formed the Rules to study customers’ purchasing behavior related to Wine and Beer. We chose the following parameters: minimum support = 0.007 (a rule found in at least every 7 transactions out of 1000) and minimum confidence of 75%. *<i>[Chart 2]</i>*
 
