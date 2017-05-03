@@ -1,0 +1,73 @@
+Title: Market Basket Analysis
+---
+Author: Allie Dempsey
+
+
+The Data Analyst Team at FDMart Grocery was asked to help to analyze FDMarts transaction database to identify interesting patterns from the database. FDMart specializes in Fresh Vegetables and Fruits.
+
+<i>Fresh Fruits</i> can be found in about 20% of all transactions, while <i>Fresh Vegetables</i> can be found in more than 30% of the transactions. Other popular product categories are: <i>Cheese, Dried Fruit, Juice, Paper Wipes, Sliced Bread, Soup, and Wine.</i> *<i>[Chart 1]</i>*
+
+#<b>Wine and Beer</b>#
+
+The Marketing Analyst expressed the desire to study patterns about alcoholic beverages  - Wine and Beer. From the frequency chart, we can conclude that Beer is slightly less frequent than Wine – about 5% of the transactions contain Beer. Using Apriori algorithm, we found frequent itemsets and formed the Rules to study customers’ purchasing behavior related to Wine and Beer. We chose the following parameters: minimum support = 0.007 (a rule found in at least every 7 transactions out of 1000) and minimum confidence of 75%. *<i>[Chart 2]</i>*
+
+A lift ratio larger than 1.0 implies that the relationship between the antecedent and the consequent is more significant than would be expected if the two sets were independent. The larger the lift ratio, the more significant the association.
+
+Next, we created subsets for <i>Wine and Beer</i> categories. 34 rules were found where Wine is on the Left Hand Side of the Rule, and 20 Rules –  where Wine is on the Right Hand Side of the Rule. The subsets for Beer include 43 rules (with minimum lift = 8.0) when Beer is on LHS, and 8 rules when Beer is on RHS.
+
+###The interesting patterns found are:###
+
+* Wine is frequently bought with Fresh Chicken, Fresh Vegetables, Fresh Fruit and Sauces. *<i>[Chart WineRules]</i>*
+
+The top 3 WineRules by lift are:
+<i>
+
+1.	{Rice,Sauces,Wine}                    => {Candles}; lift 33.387176
+
+2.	{Fresh Chicken,Fresh Vegetables,Wine} => {Candles} ; lift 31.163975
+
+3.	{Fresh Vegetables,Rice,Wine}          => {Candles}; lift 30.754636</i>
+
+Those rules are extremely interesting because Candles as a category is not frequent (less that 3% of the transactions contain Candles), but the Candle forms the strong Rules with itemsets containing Wine. We are able to state that customers rarely come to the Mart to buy Candles, but Candles is a part of the Basket customers planning to purchase for a certain occasion – like family or romantic dinner.
+
+* Beer is frequently bought with Deodorizers, Sponges, Gum, Waffles, Eggs, Pancake Mix, Cereal and Jelly. *<i>[Chart BeerRules]</i>*
+
+The top 3 Rules by lift are:
+<i>
+
+1.  {Beer,Rice}                 => {Sponges} ; lift 20.482933
+
+2.	{Beer,Dried Meat}           => {Gum}; lift 19.549790
+
+3.	{Beer,Juice,Waffles}        => {Deodorizers}; lift  18.235407</i>
+
+According to our findings, a typical customer buying Beer also buys “quick” breakfast items such as Waffles, Cereal and Jelly, and miscellaneous household items like Sponges, Deodorizes and Paper Wipes.
+
+##<b>Canned vs Fresh</b>##
+
+We created subsets of Rules2 with the higher confidence and support cut-off (parameters: minimum support = 0.01, confidence = 80%) for <i>Fresh Vegetables, Canned Vegetables and Fruit</i>. Canned Fruit as separate product category is not frequent (3% of the transactions). 
+
+* <i>Canned Vegetables</i> are most often bought with <i>Cheese, Juice, and Milk</i>. If a customer buys <i>Pancake Mix, Jelly, Jam and other Pantry items</i>, they mostly likely purchase Canned Vegetables as well.
+* <i>Fresh Vegetables</i>, on the other hand, are frequently bought with <i>Frozen Chicken, Rice, Cottage Cheese, and Sliced Bread</i>. Customers tend to buy Fresh Vegetables if they come to purchase Pasta, Rice, Cooking Oil, and Fresh Fruit. 
+* <i>Fruit</i> most likely to be bought with <i>Fresh Chicken, Sauces, Pasta, and Rice</i>. If a customer buys Fresh Vegetables, Pasta and Rice, they most likely to buy Fresh Fruit as well.
+
+##<b>Small vs Large Transactions</b>##
+
+The Market Basket Analysis indicates that:
+
+* Patterns (rules) for the Small Baskets (contain 4 or less items) have higher support (occur more frequently).
+
+* Patterns (rules) for the Small Baskets have more variation in lift (interestingness).
+
+##<b>Other Interesting Patterns</b>##
+
+The Market Basket Analysis has also shown interesting patterns about <i>non-food items</i> sold at the FDMart. One of the most frequent items purchased at the Mart are Paper Wipes. They form strong rules with Deodorizers. *<i>[Chart Wipes]</i>*
+<i>
+
+1. {Juice,Paper Wipes,Waffles} => {Deodorizers}; supp = 0.01002963, conf = 0.8165829, lift = 19.70257;
+
+2. {Paper Wipes,Sliced Bread,Waffles} => {Deodorizers}; sup =  0.01006049, conf = 0.8160200, lift = 19.68899;
+
+3. {Frozen Chicken,Juice,Paper Wipes} => {Deodorizers}; sup = 0.01006049, conf = 0.8139825, lift = 19.63983;</i>
+
+Deodorizes are currently present in 4% of the transactions. According to the information above, the Mart can increase the sales of Deodorizers.
